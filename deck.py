@@ -1,3 +1,4 @@
+import random
 class PlayingCard:
     SUITS = ["♠", "♥", "♦", "♣"]
     RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
@@ -22,6 +23,26 @@ class PlayingCard:
     def __repr__(self):
         return self.__str__()
 
+class Deck:
+    """
+    Deck of cards, 52 of PlayingCards
+    """
+    def __init__(self):
+        self._cards = []
+        for suit in PlayingCard.SUITS:
+            for rank in PlayingCard.RANKS:
+                card = PlayingCard(suit, rank)
+                self._cards.append(card)
+    def __str__(self):
+        return str(self._cards)
+    def shuffle(self):
+        random.shuffle(self._cards)
+
 card = PlayingCard("♠", "2")
 print(card)
+deck = Deck()
+print(deck)
+deck.shuffle()
+print(deck)
+
 
