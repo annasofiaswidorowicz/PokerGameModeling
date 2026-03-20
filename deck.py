@@ -37,12 +37,18 @@ class Deck:
         return str(self._cards)
     def shuffle(self):
         random.shuffle(self._cards)
+    def deal(self):
+        return self._cards.pop(0) #take out first card from the deck
 
-card = PlayingCard("♠", "2")
-print(card)
-deck = Deck()
-print(deck)
-deck.shuffle()
-print(deck)
+
+if __name__ == "__main__"
+    card = PlayingCard("♠", "2")
+    print(card)
+    deck = Deck()
+    print(deck)
+    deck.shuffle()
+    print(deck)
+    print(deck.deal())
+
 
 
