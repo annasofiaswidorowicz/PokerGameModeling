@@ -41,7 +41,7 @@ class Deck:
         return self._cards.pop(0) #take out first card from the deck
 
 
-if __name__ == "__main__"
+if "__main__" == __name__:
     card = PlayingCard("♠", "2")
     print(card)
     deck = Deck()
