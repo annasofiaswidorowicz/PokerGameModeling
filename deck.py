@@ -18,6 +18,9 @@ class PlayingCard:
     def rank(self):
         return self._rank
 
+    def __lt__(self, other):
+        return self.RANKS.index(self.rank) < self.RANKS.index(other.rank)
+
     def __str__(self):
         return f"{self.rank}{self.suit}"
     def __repr__(self):

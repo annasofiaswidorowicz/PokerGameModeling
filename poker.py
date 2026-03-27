@@ -39,20 +39,33 @@ class PokerHand:
     @property
     def is_4kind(self):
         return self.matches == 12
+
+    @property
+    def is_straight(self):
+        if self.matches != 0:
+            return False
+        self._cards.sort()
+        if (self._cards[0].RANKS.index(self._cards[0].rank) + 4 ==
+                self._cards[0].RANKS.index(self._cards[4].rank)):
+            return True
+        return False
+
+hand = PokerHand()
+print(hand)
+hand._cards.sort()
+print(hand)
+
 iterations = 0
 hits = 0
 while True:
     hand = PokerHand()
     iterations += 1
-    if hand.is_4kind:
-        print(hand)
-        print("Done it in", iterations)
+    if hand.is_straight:
+       # print(hand)
+       # print("Done it in", iterations)
         hits += 1
     if hits == 100:
         prob = hits / iterations * 100
-        print(f"Probability of a flush is {prob}%")
+        print(f"Probability of a straight is {prob}%")
         break
-
-#hand = PokerHand()
-#print(hand)
 
