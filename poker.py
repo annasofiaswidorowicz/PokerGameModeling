@@ -68,4 +68,3 @@ while True:
         prob = hits / iterations * 100
         print(f"Probability of a straight is {prob}%")
         break
-
